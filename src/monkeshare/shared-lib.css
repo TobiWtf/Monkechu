@@ -1,4 +1,23 @@
 html {
     background-color: #212121;
+}
+
+.MonkeText {
     font-family: monospace;
+    color: #304FF3;
+}
+
+.Monkepic {
+    vertical-align: middle;
+    border-color: #304FF3;
+    border-radius: 3%;
+    width: 500px;
+    height: auto;
+}
+
+.Monkepfp {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }

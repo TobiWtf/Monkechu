@@ -8,8 +8,17 @@ const electron = require("electron");
 
 let state = {};
 
-const CreateWindow = async (path) => {
+const CreateWindow = async (path, callback=null) => {
+    let call = async (arg) => {
+
+        if (callback == null) {
+            return;
+        } else {
+            callback(arg);
+        };
+    };
     if (state.mainWindow == undefined) {
+
         let window = new electron.BrowserWindow(
             {
                 width: 800,
@@ -21,19 +30,29 @@ const CreateWindow = async (path) => {
                 },
             },
         );
-        menu();
+
         state.mainWindow = window;
+
         window.webContents.openDevTools();
+
         window.loadFile(path);
+
+        menu();
+
+        call();
+
         } else {
             state.mainWindow.loadFile(path);
+            call();
         };
 };
 
 electron.app.on(
     "ready",
     async () => {
-        CreateWindow("./monkefeed/monkefeed.html");
+        CreateWindow(
+            "./monkemain/monkemain.html",
+        );
     },
 );
 
@@ -47,7 +66,9 @@ electron.app.on('window-all-closed', () => {
 
 electron.app.on('activate', () => {
         if (electron.BrowserWindow.getAllWindows().length === 0) {
-            createWindow("/monkemain/monkemain.html");
+            createWindow(
+                "/monkemain/monkemain.html",
+            );
         };
     },
 );
@@ -96,7 +117,7 @@ const menu = () => {
                 {
                     type: "separator",
                 },
-            ]
+            ],
         },
     ];
     const newMenu = electron.Menu.buildFromTemplate(template);
