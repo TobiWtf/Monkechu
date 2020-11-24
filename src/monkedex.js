@@ -24,7 +24,7 @@ const CreateWindow = async (path, callback=null) => {
                 width: 800,
                 height: 600,
                 webPreferences: {
-                    devTools: true,
+                    //devTools: true,
                     nodeIntegration: true,
                     enableRemoteModule: true,
                 },
