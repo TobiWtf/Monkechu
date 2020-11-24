@@ -1,13 +1,12 @@
 const path = require('path');
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
-  electron.app.quit();
-}
+if (require('electron-squirrel-startup')) {
+    electron.app.quit();
+};
 
 const electron = require("electron");
 
-state = {};
+let state = {};
 
 const CreateWindow = async (path) => {
     if (state.mainWindow == undefined) {
@@ -16,6 +15,7 @@ const CreateWindow = async (path) => {
                 width: 800,
                 height: 600,
                 webPreferences: {
+                    devTools: true,
                     nodeIntegration: true,
                     enableRemoteModule: true,
                 },
@@ -23,33 +23,34 @@ const CreateWindow = async (path) => {
         );
         menu();
         state.mainWindow = window;
+        window.webContents.openDevTools();
         window.loadFile(path);
         } else {
-            state.mainWindow.loadFile(path)
-        }
+            state.mainWindow.loadFile(path);
+        };
 };
 
 electron.app.on(
     "ready",
     async () => {
-        CreateWindow("src/monkemain/monkemain.html");
+        CreateWindow("./monkefeed/monkefeed.html");
     },
 );
 
 electron.app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    electron.app.quit();
-  }
-});
+        if (process.platform !== 'darwin') {
+            electron.app.quit();
+        };
+    },
+);
 
 
 electron.app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (electron.BrowserWindow.getAllWindows().length === 0) {
-    createWindow("src/monkemain/monkemain.html");
-  }
-});
+        if (electron.BrowserWindow.getAllWindows().length === 0) {
+            createWindow("/monkemain/monkemain.html");
+        };
+    },
+);
 
 const menu = () => {
     let template = [
@@ -62,13 +63,16 @@ const menu = () => {
                 {
                     label: "home",
                     click(){
-                        CreateWindow("src/monkemain/monkemain.html");
+                        CreateWindow("monkemain/monkemain.html");
                     }
+                },
+                {
+                    type: "separator",
                 },
                 {
                     label: "feed", 
                     click() {
-                        CreateWindow("src/monkefeed/monkefeed.html");
+                        CreateWindow("monkefeed/monkefeed.html");
                     },
                 },
                 {
@@ -77,7 +81,7 @@ const menu = () => {
                 {
                     label: "profile (Not working)", 
                     click() {
-                        CreateWindow("src/monkecount/monkecount.html")
+                        CreateWindow("monkecount/monkecount.html")
                     },
                 },
                 {

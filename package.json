@@ -1,52 +1,25 @@
 {
   "name": "monkechu",
-  "productName": "monkechu",
-  "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
-  },
-  "keywords": [],
-  "author": "tobi",
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "monkechu"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
-  },
-  "devDependencies": {
-    "electron": "11.0.2"
-  },
+  "version": "1.0.8",
+  "description": "Completely hackable and editable without repackaging client for iMonke",
+  "main": "index.js",
   "dependencies": {
     "electron": "^11.0.2",
     "electron-squirrel-startup": "^1.0.0",
     "imonke": "^0.3.5"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ./src/monkedex.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiWtf/Monkechu.git"
+  },
+  "author": "Tobi",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/TobiWtf/Monkechu/issues"
+  },
+  "homepage": "https://github.com/TobiWtf/Monkechu#readme"
 }
