@@ -84,14 +84,16 @@ const createFeedObject = async (data) => {
         };
     };
 
-    FeedObject.className += "MonkeText";
+    FeedObject.className += "container";
 
     let pfp = document.createElement("img");
 
     pfp.className += "Monkepfp centered-content";
 
-    let authorName = document.createElement("div");
-
+    let authorName = document.createElement("span");
+	
+    authorName.className += "MonkeText";
+	
     await awaitTasks(tasks);
 
     authorName.innerText = user._data.nick;
@@ -99,6 +101,33 @@ const createFeedObject = async (data) => {
     pfp.innerText += user._data.nick
 
     pfp.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+	
+	
+    let likebutton = document.createElement("img");
+
+    likebutton.className += "Monkepfp centered-content";
+    
+    likebutton.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+	
+    let likecounter = document.createElement("span");
+	    
+    likecounter.className += "CounterText";
+	
+    likecounter.innerText = data.like_count.toString();
+	
+	
+    let dislikebutton = document.createElement("img");
+
+    dislikebutton.className += "Monkepfp centered-content";
+	
+    dislikebutton.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+	
+    let dislikecounter = document.createElement("span");
+	
+    dislikecounter.className += "CounterText";
+	
+    dislikecounter.innerText = data.dislike_count.toString();
+	
 
     let post = document.createElement("img");
 
@@ -117,6 +146,10 @@ const createFeedObject = async (data) => {
             br(),
             pfp,
             authorName,
+	        likebutton,
+	        likecounter,
+	        dislikebutton,
+	        dislikecounter,
             br(),
         ],
     );
