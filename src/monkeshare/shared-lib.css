@@ -1,14 +1,19 @@
 html {
     background-color: #212121;
 }
-
+span {
+    margin-left: 2px;
+}
 .MonkeText {
+    text-align: left;
+    position:relative;
+    left:0px;
     font-family: monospace;
     color: #304FF3;
+    margin-right: 270px;
 }
 
 .Monkepic {
-    vertical-align: middle;
     border-color: #304FF3;
     border-radius: 3%;
     width: 500px;
@@ -16,8 +21,30 @@ html {
 }
 
 .Monkepfp {
+    position: inherit;
+    left:0px;
     vertical-align: middle;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    margin-right: 3px;
+}
+
+.container{
+    position:relative;
+    text-align:center;
+}
+
+.likedislike{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.CounterText{
+    text-align: left;
+    position:relative;
+    right: 2px;
+    font-family: monospace;
+    color: #304FF3;
+    margin-right: 10px;
 }
