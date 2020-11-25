@@ -23,6 +23,7 @@ const CreateWindow = async (path, callback=null) => {
             {
                 width: 800,
                 height: 600,
+                resizable: false,
                 webPreferences: {
                     //devTools: true,
                     nodeIntegration: true,
@@ -32,8 +33,6 @@ const CreateWindow = async (path, callback=null) => {
         );
 
         state.mainWindow = window;
-
-        //window.webContents.openDevTools();
 
         window.loadFile(path);
 
@@ -116,6 +115,17 @@ const menu = () => {
                 },
                 {
                     type: "separator",
+                },
+            ],
+        },
+        {
+            label: "Dev",
+            submenu: [
+                {
+                    label: "console",
+                    click() {
+                        state.mainWindow.webContents.openDevTools();
+                    },
                 },
             ],
         },

@@ -100,14 +100,20 @@ const createFeedObject = async (data) => {
 
     pfp.innerText += user._data.nick
 
-    pfp.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+    pfp.src = buildpath(
+        path, 
+        "/monkeshare/imonke.png",
+    );
 	
 	
     let likebutton = document.createElement("img");
 
     likebutton.className += "Monkepfp centered-content";
     
-    likebutton.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+    likebutton.src = buildpath(
+        path, 
+        "/monkeshare/up.png",
+    );
 	
     let likecounter = document.createElement("span");
 	    
@@ -120,7 +126,10 @@ const createFeedObject = async (data) => {
 
     dislikebutton.className += "Monkepfp centered-content";
 	
-    dislikebutton.src = "https://avatars3.githubusercontent.com/u/58128342?s=200&v=4";
+    dislikebutton.src = buildpath(
+        path, 
+        "/monkeshare/down.png",
+    );
 	
     let dislikecounter = document.createElement("span");
 	
