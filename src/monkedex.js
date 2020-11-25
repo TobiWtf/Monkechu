@@ -33,7 +33,7 @@ const CreateWindow = async (path, callback=null) => {
 
         state.mainWindow = window;
 
-        window.webContents.openDevTools();
+        //window.webContents.openDevTools();
 
         window.loadFile(path);
 
