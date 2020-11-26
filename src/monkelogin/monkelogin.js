@@ -15,6 +15,15 @@ const name = require(
 
 document.title = name + " Login";
 
+const storageModule =require(
+    buildpath(
+        path,
+        "src/monkelib/storage.js",
+    ),
+);
+
+const storage = new storageModule();
+
 const createCss = async (path) => {
     let myCss = document.createElement("link");
     myCss.type = "text/css";
@@ -47,10 +56,20 @@ const css = async () => {
 }; // Adds some css scripts to an element
 
 const login = async () => {
-    email = document.getElementById("email-input").value;
-    password = document.getElementById("password-input").value;
-    console.log(email);
-    console.log(password);
+    let email = document.getElementById("email-input").value;
+    let password = document.getElementById("password-input").value;
+
+    if (email === "") {
+        return alert("Please add a value for field 'email'");
+    };
+
+    if (password === "") {
+        return alert("Please add a value for field 'password'");
+    };
+
+    
+
+
 };
 
 css();
