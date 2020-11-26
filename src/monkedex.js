@@ -1,5 +1,8 @@
 const path = require('path');
 
+let buildpath = require("path").join;
+
+
 if (require('electron-squirrel-startup')) {
     electron.app.quit();
 };
@@ -24,6 +27,7 @@ const CreateWindow = async (path, callback=null) => {
                 width: 800,
                 height: 600,
                 resizable: false,
+                icon: buildpath(electron.app.getAppPath(), "src/monkeshare/imonke.png"),
                 webPreferences: {
                     //devTools: true,
                     nodeIntegration: true,

@@ -11,8 +11,9 @@
   "devDependencies": {},
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . app  --overwrite --platform linux --arch x64 --out dist/",
-    "package": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
+    "build-linux": "electron-packager . iMonke  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/imonke.png --out builds/linux/",
+    "build-mac": "electron-packager . iMonke --overwrite --platform=darwin --arch=x64 --icon=src/monkeshare/imonke.png --prune=true --out=builds/mac/",
+    "build-win": "electron-packager . iMonke --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/monkeshare/imonke.png  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'"
   },
   "repository": {
     "type": "git",
