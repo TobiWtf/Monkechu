@@ -20,7 +20,7 @@ class storage {
 
     };
 
-    async GetLogin() {
+    async IsLoggedIn() {
 
         let email = this._storage.get(
             "login.email",
@@ -34,6 +34,27 @@ class storage {
             "login.token",
         );
 
+        if (token == undefined || secret == undefined || email == undefined) {
+            return false;
+        }
+
+        return true;
+    };
+
+    async GetLogin() {
+
+        let email = this._storage.get(
+            "login.email",
+        );
+
+        let secret = this._storage.get(
+            "login.secret",
+        );
+        
+        let token = this._storage.get(
+            "login.token",
+        );
+        
         return {
             email: email,
             secret: secret,
