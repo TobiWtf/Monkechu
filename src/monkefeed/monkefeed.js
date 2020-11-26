@@ -9,7 +9,7 @@ let imonke = require("imonke");
 const name = require(
     buildpath(
         path, 
-        "/monkelib/values.js",
+        "src/monkelib/values.js",
     ),
 ).config.name;
 
@@ -29,13 +29,13 @@ const css = async () => {
         createCss(
             buildpath(
                 path, 
-                "/monkeshare/centered-content.css"
+                "src/monkeshare/centered-content.css"
             ),
         ),
         createCss(
             buildpath(
                 path, 
-                "/monkeshare/shared-lib.css"
+                "src/monkeshare/shared-lib.css"
             ),
         ),
     ];
@@ -102,20 +102,20 @@ const createFeedObject = async (data) => {
 
     pfp.src = buildpath(
         path, 
-        "/monkeshare/imonke.png",
+        "src/monkeshare/imonke.png",
     );
-	
-	
+    
     let likebutton = document.createElement("img");
 
     likebutton.className += "Monkepfp centered-content";
-    
+	
     likebutton.src = buildpath(
         path, 
-        "/monkeshare/up.png",
+        "src/monkeshare/up.png",
     );
 	
     let likecounter = document.createElement("span");
+
 	    
     likecounter.className += "CounterText";
 	
@@ -128,7 +128,7 @@ const createFeedObject = async (data) => {
 	
     dislikebutton.src = buildpath(
         path, 
-        "/monkeshare/down.png",
+        "src/monkeshare/down.png",
     );
 	
     let dislikecounter = document.createElement("span");

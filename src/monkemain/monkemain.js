@@ -17,7 +17,7 @@ const createCss = async (path) => {
 const css = async () => {
     let scripts = document.getElementById("scripts");
     let index = [
-        createCss(buildpath(path, "/monkeshare/shared-lib.css"))
+        createCss(buildpath(path, "src/monkeshare/shared-lib.css"))
     ];
     for (let value in index) {
         scripts.appendChild(await index[value]);

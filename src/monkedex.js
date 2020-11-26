@@ -50,7 +50,7 @@ electron.app.on(
     "ready",
     async () => {
         CreateWindow(
-            "./monkemain/monkemain.html",
+            "src/monkelogin/monkelogin.html",
         );
     },
 );
@@ -66,7 +66,7 @@ electron.app.on('window-all-closed', () => {
 electron.app.on('activate', () => {
         if (electron.BrowserWindow.getAllWindows().length === 0) {
             createWindow(
-                "/monkemain/monkemain.html",
+                "src/monkemain/monkemain.html",
             );
         };
     },
@@ -83,7 +83,7 @@ const menu = () => {
                 {
                     label: "home",
                     click(){
-                        CreateWindow("monkemain/monkemain.html");
+                        CreateWindow("src/monkemain/monkemain.html");
                     }
                 },
                 {
@@ -92,7 +92,7 @@ const menu = () => {
                 {
                     label: "feed", 
                     click() {
-                        CreateWindow("monkefeed/monkefeed.html");
+                        CreateWindow("src/monkefeed/monkefeed.html");
                     },
                 },
                 {
@@ -101,7 +101,16 @@ const menu = () => {
                 {
                     label: "profile (Not working)", 
                     click() {
-                        CreateWindow("monkecount/monkecount.html")
+                        CreateWindow("src/monkecount/monkecount.html")
+                    },
+                },
+                {
+                    type: "separator",
+                },
+                {
+                    label: "login", 
+                    click() {
+                        CreateWindow("src/monkelogin/monkelogin.html")
                     },
                 },
                 {

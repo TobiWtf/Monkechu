@@ -1,9 +1,100 @@
 html {
     background-color: #212121;
 }
+
+* {
+    font-family: monospace;
+    text-decoration: none;
+}
+
+.login-div {
+    margin: 100px auto;
+    width: 350px;
+    padding: 60px;
+    background-color: #353434;
+    border-radius: 4%;
+}
+
+.login-div svg {
+    height: 25px;
+    margin-bottom: -5px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin:0 auto;  
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.title, .subtitle {
+    text-align: center;
+    color: #304FF3;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 35;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.form input {
+    font-size: 18px;
+    padding: 10px 20px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px;
+    margin-bottom: 30px;
+    margin: 10px;
+}
+
+.options button, .options input{
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color: #212121;
+    color: #304FF3;
+}
+
+.email, .password {
+    display: block;
+    border-radius: 30px;
+    border: 1px solid #212121;
+    padding: 5px;
+    margin: 10px;
+}
+
+.email input, .password input {
+    color: #304FF3;
+}
+
 span {
     margin-left: 2px;
 }
+
 .MonkeText {
     text-align: left;
     position:relative;
@@ -48,3 +139,19 @@ span {
     color: #304FF3;
     margin-right: 10px;
 }
+
+.svg-icon {
+    width: 1em;
+    height: 1em;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #4691f6;
+  }
+  
+  .svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
+  }
