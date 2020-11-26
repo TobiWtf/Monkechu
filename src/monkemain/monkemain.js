@@ -2,7 +2,7 @@ const remote = require("electron").remote;
 let path = remote.app.getAppPath();
 const monkelib = require("imonke");
 let buildpath = require("path").join
-const name = require(buildpath(path, "/monkelib/values.js")).config.name;
+const name = require(buildpath(path, "src/monkelib/values.js")).config.name;
 document.title = name + " Home";
 
 
