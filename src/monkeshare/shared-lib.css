@@ -6,7 +6,9 @@ html {
     font-family: monospace;
     text-decoration: none;
 }
-
+span {
+  margin-left: 5px;
+}
 .login-div {
     margin: 100px auto;
     width: 350px;
@@ -91,17 +93,11 @@ html {
     color: #304FF3;
 }
 
-span {
-    margin-left: 2px;
-}
-
 .MonkeText {
     text-align: left;
     position:relative;
-    left:0px;
     font-family: monospace;
     color: #304FF3;
-    margin-right: 270px;
 }
 
 .Monkepic {
@@ -113,29 +109,63 @@ span {
 
 .Monkepfp {
     position: inherit;
-    left:0px;
     vertical-align: middle;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-right: 3px;
 }
 
-.container{
-    position:relative;
+.Container{
     text-align:center;
 }
 
-.likedislike{
-    margin-right: 5px;
-    margin-left: 5px;
+.LikeBox{
+    margin-top:-30px;
+    position: relative;
+    text-align:right;
+}
+.LikeDislike{
+    display: inline-block;
+    position: inherit;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
 }
 
 .CounterText{
-    text-align: left;
+    display: inline-block;
+    text-align: right;
     position:relative;
     right: 2px;
     font-family: monospace;
     color: #304FF3;
-    margin-right: 10px;
+    margin-left: 5px;
 }
+
+.AccountBox{
+    display:inline-block;
+    text-align:left;
+}
+
+.PostInfo{
+    width:500px;
+    display: inline-block;
+    text-align:left;
+}
+
+.svg-icon {
+    width: 1em;
+    height: 1em;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #4691f6;
+  }
+  
+  .svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
+  }
