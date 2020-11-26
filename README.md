@@ -11,7 +11,7 @@ git clone https://github.com/TobiWtf/Monkechu.git Monkechu && cd Monkechu
 Then, to install the proper dependencies, run this
 
 ```
-npm install && npm init -y
+npm install
 ```
 
 After you can installed those, you can now run the app with
