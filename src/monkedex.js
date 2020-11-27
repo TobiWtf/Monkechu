@@ -41,7 +41,7 @@ const CreateWindow = async (path, callback=null) => {
                 resizable: false,
                 icon: buildpath(electron.app.getAppPath(), "src/monkeshare/dump/imonke-new-leaning-padded-large.png"),
                 webPreferences: {
-                    //devTools: true,
+                    devTools: true,
                     nodeIntegration: true,
                     enableRemoteModule: true,
                 },
