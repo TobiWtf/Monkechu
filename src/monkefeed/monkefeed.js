@@ -96,7 +96,7 @@ const createFeedObject = async (data) => {
 	
     pfp.src = buildpath(
         path, 
-        "src/monkeshare/imonke.png",
+        "src/monkeshare/dump/imonke.ico",
     );
 
     let authorName = document.createElement("span");
