@@ -120,7 +120,7 @@ const createFeedObject = async (data) => {
 	
     likeButton.src = buildpath(
         path, 
-        "src/monkeshare/up.png",
+        "src/monkeshare/dump/up.png",
     );
 	
     let likeCounter = document.createElement("span");
@@ -137,7 +137,7 @@ const createFeedObject = async (data) => {
 	
     dislikeButton.src = buildpath(
         path, 
-        "src/monkeshare/down.png",
+        "src/monkeshare/dump/down.png",
     );
 	
     let dislikeCounter = document.createElement("span");
