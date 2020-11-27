@@ -1,9 +1,16 @@
+:root {
+    --main-bg-color: #212121;
+    --main-lightweight-color: #353434;
+    --main-blue-monke: #304FF3;
+    --main-font-family: monospace;
+}
+
 html {
-    background-color: #212121;
+    background-color: var(--main-bg-color);
 }
 
 * {
-    font-family: monospace;
+    font-family: var(--main-font-family);
     text-decoration: none;
 }
 span {
@@ -13,7 +20,7 @@ span {
     margin: 100px auto;
     width: 350px;
     padding: 60px;
-    background-color: #353434;
+    background-color: var(--main-lightweight-color);
     border-radius: 4%;
 }
 
@@ -38,7 +45,7 @@ span {
 
 .title, .subtitle {
     text-align: center;
-    color: #304FF3;
+    color: var(--main-blue-monke);
 }
 
 .title {
@@ -75,31 +82,31 @@ span {
     border: none;
     font-size: 18px;
     border-radius: 30px;
-    background-color: #212121;
-    color: #304FF3;
+    background-color: var(--main-bg-color);
+    color: var(--main-blue-monke);
 }
 
 .email, .password {
     display: block;
     border-radius: 30px;
-    border: 1px solid #212121;
+    border: 1px solid var(--main-bg-color);
     padding: 5px;
     margin: 10px;
 }
 
 .email input, .password input {
-    color: #304FF3;
+    color: var(--main-blue-monke);
 }
 
 .MonkeText {
     text-align: left;
     position:relative;
-    font-family: monospace;
-    color: #304FF3;
+    font-family: var(--main-font-family);
+    color: var(--main-blue-monke);
 }
 
 .Monkepic {
-    border-color: #304FF3;
+    border-color: var(--main-blue-monke);
     border-radius: 3%;
     width: 500px;
     height: auto;
@@ -136,8 +143,8 @@ span {
     text-align: right;
     position:relative;
     right: 2px;
-    font-family: monospace;
-    color: #304FF3;
+    font-family: var(--main-font-family);
+    color: var(--main-blue-monke);
     margin-left: 5px;
 }
 
