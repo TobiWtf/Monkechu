@@ -8,7 +8,8 @@
     "electron-packager": "^15.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^6.0.1",
-    "imonke": "^0.3.5"
+    "imonke": "^0.3.5",
+    "update-electron-app": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {

@@ -3,6 +3,8 @@ const electron = require("electron");
 
 let buildpath = require("path").join;
 
+let updaterTool = require('update-electron-app');
+
 let toolSet = true
 
 let path = electron.app.getAppPath();
@@ -162,6 +164,15 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                 type: "separator",
             },
             {
+                label: "update", 
+                click() {
+                    updaterTool();
+                },
+            },
+            {
+                type: "separator",
+            },
+            {
                 label: "exit", 
                 click() {
                     electron.app.quit();
@@ -180,6 +191,15 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                 label: "login", 
                 click() {
                     CreateWindow("src/monkelogin/monkelogin.html")
+                },
+            },
+            {
+                type: "separator",
+            },
+            {
+                label: "update", 
+                click() {
+                    updaterTool();
                 },
             },
             {

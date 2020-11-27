@@ -41,6 +41,7 @@ span {
 .logo img {
     width: 100%;
     border-radius: 50%;
+    border: 2px solid var(--main-blue-monke);
 }
 
 .title, .subtitle {
@@ -64,7 +65,6 @@ span {
     border: none;
     outline: none;
     background: none;
-
 }
 
 .options {
