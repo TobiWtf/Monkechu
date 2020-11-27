@@ -110,17 +110,18 @@ electron.app.on('activate', () => {
     },
 );
 
-electron.ipcMain.on("create-window", async (event, arg) => {
+electron.ipcMain.on("create-window", async (event, opts={}) => {
+        needsLogin = opts.needsLogin || false;
 
         menu(
             {
-                needsLogin: false,
+                needsLogin: needsLogin,
                 dev_tools: toolSet,
             },
         );
 
         CreateWindow(
-            arg,
+            opts.window,
         );
     },
 );

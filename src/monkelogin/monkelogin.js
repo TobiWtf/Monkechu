@@ -87,7 +87,13 @@ const login = async () => {
             client._secret,
             client._token,
         );
-        ipcRenderer.send("create-window", "src/monkefeed/monkefeed.html")
+        ipcRenderer.send(
+            "create-window", 
+            {
+                window: "src/monkefeed/monkefeed.html",
+                needsLogin: false,
+            },
+        );
     };
 };
 
