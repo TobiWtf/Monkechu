@@ -11,7 +11,9 @@
     "imonke": "^0.3.5",
     "update-electron-app": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron-winstaller": "^4.0.1"
+  },
   "scripts": {
     "start": "electron .",
     "build-linux": "electron-packager . iMonke  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --out builds/linux/",
