@@ -1,0 +1,8 @@
+{
+    "dest": "builds/linux/iMonke",
+    "icon": "src/monkeshare/dump/imonke-new-leaning-padded-large.png",
+    "categories": [],
+    "lintianOverrides": [
+      "changelog-file-missing-in-native-package"
+    ]
+}

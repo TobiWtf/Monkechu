@@ -1,5 +1,6 @@
 
 const electron = require("electron");
+const { url } = require("inspector");
 
 let buildpath = require("path").join;
 
@@ -25,6 +26,7 @@ if (require('electron-squirrel-startup')) {
 
 let state = {};
 
+
 const CreateWindow = async (path, callback=null) => {
     let call = async (arg) => {
 
@@ -46,9 +48,11 @@ const CreateWindow = async (path, callback=null) => {
                     devTools: true,
                     nodeIntegration: true,
                     enableRemoteModule: true,
+                    nativeWindowOpen: true
                 },
             },
         );
+        
 
         state.mainWindow = window;
 
@@ -56,10 +60,10 @@ const CreateWindow = async (path, callback=null) => {
 
         call();
 
-        } else {
-            state.mainWindow.loadFile(path);
-            call();
-        };
+    } else {
+        state.mainWindow.loadFile(path);
+        call();
+    };
 };
 
 electron.app.on(
@@ -166,7 +170,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
             {
                 label: "update", 
                 click() {
-                    updaterTool();
+                    state.mainWindow.loadURL("https://github.com/TobiWtf/Monkechu/releases")
                 },
             },
             {
@@ -199,7 +203,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
             {
                 label: "update", 
                 click() {
-                    updaterTool();
+                    state.mainWindow.loadURL("https://github.com/TobiWtf/Monkechu/releases")
                 },
             },
             {

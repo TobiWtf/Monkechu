@@ -9,7 +9,7 @@ const runInstaller = async () => {
                 exe: 'iMonke.exe',
                 owners: "Tobi, MakeShiftArtist, Zero",
                 description: "imagine if ifunny was good?",
-                version: "1.2.8",
+                version: "1.2.9",
                 title: "iMonke",
                 name: "iMonke",
                 setupIcon: "src/monkeshare/dump/imonke-new-leaning-padded-large.ico",

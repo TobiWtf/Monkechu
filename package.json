@@ -1,6 +1,6 @@
 {
   "name": "monkechu",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Completely hackable and editable without repackaging client for iMonke",
   "main": "index.js",
   "dependencies": {
@@ -12,13 +12,15 @@
     "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
+    "electron-installer-debian": "^3.1.0",
     "electron-winstaller": "^4.0.1"
   },
   "scripts": {
     "start": "electron .",
-    "build-linux": "electron-packager . iMonke  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --out builds/linux/",
+    "build-linux": "electron-packager . monkechu  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --out builds/linux/",
     "build-mac": "electron-packager . iMonke --overwrite --platform=darwin --arch=x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --prune=true --out=builds/mac/",
-    "build-win": "electron-packager . iMonke --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'"
+    "build-win": "electron-packager . iMonke --overwrite --platform=win32 --arch=ia32 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'",
+    "finalize-linux": "electron-installer-debian --src builds/linux/iMonke --arch amd64 --config debian.json"
   },
   "repository": {
     "type": "git",
