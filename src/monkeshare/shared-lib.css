@@ -34,7 +34,7 @@ span {
 .logo {
     width: 150px;
     height: 150px;
-    margin:0 auto;  
+    margin:0 auto;
     margin-bottom: 10px;
 }
 
@@ -99,7 +99,6 @@ span {
 }
 
 .MonkeText {
-    text-align: left;
     position:relative;
     font-family: var(--main-font-family);
     color: var(--main-blue-monke);
@@ -157,4 +156,49 @@ span {
     width:500px;
     display: inline-block;
     text-align:left;
+}
+.MonkeBigPFP{
+    border: 3px solid var(--main-blue-monke);
+    text-align:left;
+    position: inherit;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.newLine{
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ProfileStats {
+  text-align: center;
+  margin:auto;
+}
+.Stat{
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 20px;
+}
+.Profile{
+    border: 3px solid var(--main-blue-monke);
+    font-size: 25px;
+    margin: auto;
+    width: 500px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    background-color: #353434;
+    border-radius: 5%;
+    text-align: left;
+}
+.Profile svg {
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 5px;
 }

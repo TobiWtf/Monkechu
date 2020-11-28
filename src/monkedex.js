@@ -155,7 +155,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                 type: "separator",
             },
             {
-                label: "profile (Not working)", 
+                label: "profile", 
                 click() {
                     CreateWindow("src/monkecount/monkecount.html")
                 },
