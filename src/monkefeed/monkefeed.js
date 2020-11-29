@@ -17,14 +17,19 @@ document.title = name + " Feed";
 
 const createCss = async (path) => {
     let myCss = document.createElement("link");
+
     myCss.type = "text/css";
+    
     myCss.rel = "stylesheet";
+
     myCss.href = path;
+
     return myCss;
 }; // Creates a css element
 
 const css = async () => {
     let scripts = document.getElementById("scripts");
+
     let index = [
         createCss(
             buildpath(
@@ -39,6 +44,7 @@ const css = async () => {
             ),
         ),
     ];
+
     for (let value in index) {
         scripts.appendChild(
             await index[value],
@@ -54,6 +60,7 @@ const awaitTasks = async (tasks) => {
 
 const createFeed = async () => {
     let feed = document.createElement("div");
+
     return feed;
 }; // Creates a feed object using a div tag
 
@@ -87,8 +94,8 @@ const createFeedObject = async (data) => {
     FeedObject.className += "container";
 	
 	let Account = document.createElement("div");
-	Account.className += "AccountBox";
-	
+
+    Account.className += "AccountBox";	
 
     let pfp = document.createElement("img");
 
@@ -108,9 +115,11 @@ const createFeedObject = async (data) => {
     authorName.innerText = user._data.nick;
 	
     Account.appendChild(pfp);
+    
     Account.appendChild(authorName);
 	
     let LikeAndDislike = document.createElement("div");
+    
     LikeAndDislike.className += "LikeBox";
 
     
@@ -147,8 +156,11 @@ const createFeedObject = async (data) => {
     dislikeCounter.innerText = data.dislike_count.toString();
 	
     LikeAndDislike.appendChild(likeButton);
+    
     LikeAndDislike.appendChild(likeCounter);
+    
     LikeAndDislike.appendChild(dislikeButton);
+    
     LikeAndDislike.appendChild(dislikeCounter);
 	
 
@@ -159,13 +171,19 @@ const createFeedObject = async (data) => {
     post.className += "centered-content Monkepic";
 
     post.src = data.file_url;
+    
     let PostBox = document.createElement("div");
+    
     PostBox.className += "PostInfo";
 
     PostBox.appendChild(post);
+    
     PostBox.appendChild(br());
+    
     PostBox.appendChild(br());
+    
     PostBox.appendChild(Account);
+    
     PostBox.appendChild(LikeAndDislike);
 
     addFeedValues(
@@ -176,6 +194,7 @@ const createFeedObject = async (data) => {
             br(),
         ],
     );
+    
     return FeedObject;
 }; // Creates the feed object (Picture, pfp, user)
 
@@ -207,6 +226,7 @@ const feed = async () => {
 
     for (let task in tasks) {
         let promised = await tasks[task];
+
         feedOverview.appendChild(
             promised,
         );
@@ -214,5 +234,6 @@ const feed = async () => {
 }; // Creates the feed overview and parses feed content from iMonke
 
 css();
+
 feed();
 
