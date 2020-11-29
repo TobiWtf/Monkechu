@@ -1,4 +1,4 @@
-const remote = require("electron").remote;
+const { ipcRenderer, remote } = require('electron')
 
 let buildpath = require("path").join;
 
@@ -36,15 +36,16 @@ const makeStat = async (title, value) => {
 const imonke = require("imonke");
 
 const accountObject = async () => {
-    var storage = new storageModule();
-    let login = await storage.GetLogin();
-    let client = new imonke.Client({email: login.email, secret: login.secret});
-    await client.get();
-    let user = await client.data;
+    let client;
+
+    client = ipcRenderer.sendSync("get-client");
+    console.log(client)
+    //let user = await client.data;
+
+    let user = ipcRenderer.sendSync("get-client-data");
+
     let profileBox = await makeDiv();
-
     
-
     profileBox.className += "Profile MonkeText";
     let pfpAndName = await makeDiv();
 

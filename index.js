@@ -1,1 +1,1 @@
-require("./src/monkedex")
+require("./src/monkedex");

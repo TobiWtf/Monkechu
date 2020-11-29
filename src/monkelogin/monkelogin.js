@@ -1,5 +1,4 @@
-const remote = require("electron").remote;
-const { ipcRenderer } = require('electron')
+const { ipcRenderer, remote } = require('electron')
 
 let buildpath = require("path").join;
 
@@ -68,15 +67,16 @@ const login = async () => {
         return alert("Please add a value for field 'password'");
     };
 
-    client = new imonke.Client();
-
-    Login= await client.login(
-        {
-            email: email,
-            password: password,
-        },
-    );
+    //Login = await client.login(
+    //    {
+    //        email: email,
+    //        password: password,
+    //    },
+    //);
     
+    let Login = ipcRenderer.sendSync("login", {email: email, password: password})
+    let client = ipcRenderer.sendSync("get-client");
+
     if (Login == false) {
         return alert("Something went wrong logging in...");
     };
@@ -88,7 +88,7 @@ const login = async () => {
             client._token,
         );
         ipcRenderer.send(
-            "create-window", 
+            "create-window",
             {
                 window: "src/monkefeed/monkefeed.html",
                 needsLogin: false,
