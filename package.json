@@ -1,6 +1,6 @@
 {
   "name": "monkechu",
-  "version": "1.2.9",
+  "version": "1.2.17",
   "description": "Completely hackable and editable without repackaging client for iMonke",
   "main": "index.js",
   "dependencies": {
