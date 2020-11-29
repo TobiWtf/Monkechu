@@ -13,7 +13,7 @@ const name = require(
     ),
 ).config.name;
 
-document.title = name + " Login";
+document.title = name + " Signup";
 
 const storageModule =require(
     buildpath(
@@ -55,9 +55,10 @@ const css = async () => {
     };
 }; // Adds some css scripts to an element
 
-const login = async () => {
+const signup = async () => {
     let email = document.getElementById("email-input").value;
     let password = document.getElementById("password-input").value;
+    let nick = document.getElementById("username-input").value;
     
     if (email === "") {
         return alert("Please add a value for field 'email'");
@@ -67,21 +68,34 @@ const login = async () => {
         return alert("Please add a value for field 'password'");
     };
 
-    //Login = await client.login(
-    //    {
-    //        email: email,
-    //        password: password,
-    //    },
-    //);
+    if (nick === "") {
+        return alert("Please add a value for field 'username'");
+    };
+
+
     
-    let Login = ipcRenderer.sendSync("login", {email: email, password: password})
+    let CheckSignup = ipcRenderer.sendSync(
+        "signup", 
+        {
+            email: email, 
+            password: password,
+            nick: nick,
+        },
+    );
+
+    if (CheckSignup.error == true) {
+        return alert(
+            CheckSignup.reason
+        );
+    };
+    let signup = CheckSignup.login;
     let client = ipcRenderer.sendSync("get-client");
 
-    if (Login == false) {
+    if (signup == false) {
         return alert("Something went wrong logging in...");
     };
 
-    if (Login == true) {
+    if (signup == true) {
         storage.SetLogin(
             client._email,
             client._secret,
@@ -97,11 +111,11 @@ const login = async () => {
     };
 };
 
-const signup = async() => {
+const login = async() => {
     ipcRenderer.send(
         "create-window",
         {
-            window: "src/monkesignup/monkesignup.html",
+            window: "src/monkelogin/monkelogin.html",
             needsLogin: true,
         },
     );

@@ -69,7 +69,7 @@ electron.app.on(
     "ready",
     async () => {
 
-        //await storage.clear();
+        await storage.clear();
 
         let client = new imonke.Client();
 
@@ -178,6 +178,47 @@ electron.ipcMain.on(
 );
 
 electron.ipcMain.on(
+    "signup",
+    async (event, opts={}) => {
+
+        let nick = opts.nick;
+        let email = opts.email;
+        let password = opts.password;
+
+        let NickExists = state.Client.nick_exists(nick,);
+        let EmailExists = state.Client.email_exists(email,);
+
+        if (await NickExists == true) {
+            event.returnValue = {
+                error: true,
+                reason: `${nick} is taken.`,
+            };
+            return;
+        };
+
+        if (await EmailExists == true) {
+            event.returnValue = {
+                error: true,
+                reason: `${email} is taken`,
+            };
+            return;
+        };
+
+        event.returnValue = {
+            login: await state.Client.create(
+                {
+                    email: email,
+                    password: password,
+                    nick: nick,
+                },
+            ),
+            error: false,
+        };
+    },
+);
+
+
+electron.ipcMain.on(
     "create-window", 
     async (event, opts={}) => {
         needsLogin = opts.needsLogin || false;
@@ -274,6 +315,12 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                     label: "login", 
                     click() {
                         CreateWindow("src/monkelogin/monkelogin.html")
+                    },
+                },
+                {
+                    label: "signup", 
+                    click() {
+                        CreateWindow("src/monkesignup/monkesignup.html")
                     },
                 },
                 {

@@ -1,6 +1,6 @@
 {
   "name": "monkechu",
-  "version": "1.2.17",
+  "version": "1.2.23",
   "description": "Completely hackable and editable without repackaging client for iMonke",
   "main": "index.js",
   "dependencies": {
@@ -19,7 +19,7 @@
     "start": "electron .",
     "build-linux": "electron-packager . monkechu  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --out builds/linux/",
     "build-mac": "electron-packager . iMonke --overwrite --platform=darwin --arch=x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --prune=true --out=builds/mac/",
-    "build-win": "electron-packager . iMonke --overwrite --platform=win32 --asar=true --arch=ia32 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'",
+    "build-win": "electron-packager . iMonke --overwrite --platform=win32 --arch=ia32 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'",
     "finalize-linux": "electron-installer-debian --src builds/linux/iMonke --arch amd64 --config debian.json"
   },
   "repository": {

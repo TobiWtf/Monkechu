@@ -9,12 +9,13 @@ const runInstaller = async () => {
                 exe: 'iMonke.exe',
                 owners: "Tobi, MakeShiftArtist, Zero",
                 description: "imagine if ifunny was good?",
-                version: "1.2.17",
+                version: "1.2.23",
                 title: "iMonke",
                 name: "iMonke",
                 setupIcon: "src/monkeshare/dump/imonke-new-leaning-padded-large.ico",
                 setupExe: "iMonke.exe",
-                setupMsi: "iMonke.msi"
+                setupMsi: "iMonke.msi",
+                loadingGif: "src/monkeshare/dump/imonke-new-leaning-padded-large.gif",
             },
         );
         console.log('It worked!');

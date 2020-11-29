@@ -86,7 +86,12 @@ span {
     color: var(--main-blue-monke);
 }
 
-.email, .password {
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.email, .password, .username {
     display: block;
     border-radius: 30px;
     border: 1px solid var(--main-bg-color);
@@ -94,7 +99,7 @@ span {
     margin: 10px;
 }
 
-.email input, .password input {
+.email input, .password input, .username input {
     color: var(--main-blue-monke);
 }
 
