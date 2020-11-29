@@ -114,8 +114,6 @@ const accountObject = async () => {
 }; // Makes the account box itself. No posts/feed
 
 const account = async () =>{
-    document.title = "Profile"
-    
     let field = document.getElementById("account");
     
     let accountData = await accountObject();
