@@ -2,6 +2,7 @@
     --main-bg-color: #212121;
     --main-lightweight-color: #353434;
     --main-blue-monke: #304FF3;
+    --main-lightweight-ele: #8d8d8d;
     --main-font-family: monospace;
 }
 
@@ -207,3 +208,26 @@ p {
   margin-left: 10px;
   margin-right: 5px;
 }
+
+.post-div {
+    margin: 100px auto;
+    width: 350px;
+    padding: 60px;
+    background-color: var(--main-lightweight-color);
+    border-radius: 4%;
+}
+
+.post-div button {
+    width: 50%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color: var(--main-bg-color);
+    color: var(--main-blue-monke);
+}
+
+.post-div button:hover {
+    background-color: var(--main-lightweight-ele);
+}
+

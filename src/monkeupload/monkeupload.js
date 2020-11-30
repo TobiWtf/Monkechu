@@ -35,10 +35,46 @@ const css = async () => {
     };
 }; // Adds some css scripts to an element
 
+const run = async () => {
+    const realFileButton = document.getElementById("real-file");
+    const customText = document.getElementById("custom-text");
+    const customButton = document.getElementById("custom-button");
+    const submitButton= document.getElementById("submit");
 
-function showFileName() {
-    var fil = document.getElementById("myFile");
-    alert(fil.value);
+    customButton.addEventListener(
+        "click",
+        async () => {
+            realFileButton.click();
+        },
+    );
+
+    realFileButton.addEventListener(
+        "change",
+        async () => {
+            if (realFileButton.value) {
+                customText.innerText = "";
+            } else {
+                customText.innerText = "No file chosen yet";
+            };
+        },
+    );
+
+    submitButton.addEventListener(
+        "click",
+        async () => {
+            if (realFileButton.value) {
+                const config = {
+                    tags: [],
+                    featurable: true,
+                    nsfw: false,
+                    path: realFileButton.files[0].path,
+                }
+                ipcRenderer.send("client-post", config)
+            } else {
+                return alert("No file chosen")
+            }
+        },
+    );
 }
-
+run();
 css();

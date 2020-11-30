@@ -158,6 +158,18 @@ electron.ipcMain.on(
 );
 
 electron.ipcMain.on(
+    "client-post",
+    async (event, config={}) => {
+        state.Client.upload_content_file(
+            config.tags,
+            config.featurable,
+            config.nsfw,
+            config.path
+        );
+    },
+);
+
+electron.ipcMain.on(
     "get-client-data",
     async (event, opts={}) => {
         event.returnValue = await state.Client.data;
@@ -289,6 +301,12 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                     label: "profile", 
                     click() {
                         CreateWindow("src/monkecount/monkecount.html")
+                    },
+                },
+                {
+                    label: "upload", 
+                    click() {
+                        CreateWindow("src/monkeupload/monkeupload.html")
                     },
                 },
                 {
