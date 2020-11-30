@@ -69,7 +69,7 @@ electron.app.on(
     "ready",
     async () => {
 
-        await storage.clear();
+        //await storage.clear();
 
         let client = new imonke.Client();
 

@@ -99,7 +99,7 @@ p {
     margin: 10px;
 }
 
-.email input, .password input, .username input {
+.email input, .password input, .username {
     color: var(--main-blue-monke);
 }
 
