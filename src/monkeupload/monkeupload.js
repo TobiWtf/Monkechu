@@ -85,7 +85,8 @@ const run = async () => {
                 ipcRenderer.send(
                     "create-window", 
                     {
-                        window: "src/monkeupload/monkeupload.html"
+                        window: "src/monkeupload/monkeupload.html",
+                        needsLogin: false,
                     }
                 );
             } else {

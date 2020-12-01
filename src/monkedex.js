@@ -1,3 +1,4 @@
+const { create } = require("domain");
 const electron = require("electron");
 
 const imonke = require("imonke");
@@ -296,7 +297,7 @@ const createSeparators = (listOfLabels) => {
 const menu = (opts={needsLogin:false, dev_tools:true}) => {
 
     let MonkeMenuLoggedIn = {
-        label: "Monke",
+        label: "Monke Menu",
         submenu: createSeparators(
             [
                 {
@@ -340,7 +341,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
     };
 
     let MonkeMenuNotLoggedIn = {
-        label: "Monke",
+        label: "Monke Menu",
         submenu: createSeparators(
             [
                 {
@@ -370,6 +371,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
             ],
         ),
     };
+
     
     let DevMenu = {
         label: "Dev",
@@ -382,6 +384,22 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
             },
         ],
     }
+
+    let InfoMenu = {
+        label: "Info",
+        submenu: createSeparators(
+            [
+                {
+                    label: "version",
+                    submenu: [{label: "1.2.34"}]
+                },
+                {
+                    label: "pp",
+                    submenu: [{label: "poopoo"}]
+                }
+            ]
+        ),
+    };
 
     let template = [];
     if (opts.needsLogin == true) {
@@ -396,7 +414,9 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
         template.push(DevMenu,);
     };
 
-    const newMenu = electron.Menu.buildFromTemplate(template);
+    template.push(InfoMenu);
+
+    const newMenu = electron.Menu.buildFromTemplate(createSeparators(template));
 
     electron.Menu.setApplicationMenu(newMenu);
 };
