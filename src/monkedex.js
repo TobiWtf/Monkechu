@@ -396,7 +396,13 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
                 {
                     label: "pp",
                     submenu: [{label: "poopoo"}]
-                }
+                },
+                {
+                    label: "Report a bug",
+                    click() {
+                        state.mainWindow.loadURL("https://github.com/TobiWtf/Monkechu/issues/new");
+                    },
+                },
             ]
         ),
     };
