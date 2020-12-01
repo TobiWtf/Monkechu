@@ -16,7 +16,7 @@
     "electron-winstaller": "^4.0.1"
   },
   "scripts": {
-    "start": "electron .",
+    "start": "electron . --disable-gpu",
     "build-linux": "electron-packager . monkechu  --overwrite --prune --platform linux --arch x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --out builds/linux/",
     "build-mac": "electron-packager . iMonke --overwrite --platform=darwin --arch=x64 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico --prune=true --out=builds/mac/",
     "build-win": "electron-packager . iMonke --overwrite --platform=win32 --asar=true --arch=ia32 --icon=src/monkeshare/dump/imonke-new-leaning-padded-large.ico  --prune=true --out=builds/windows --version-string.CompanyName=iMonke'iMonke' --version-string.FileDescription=CE --version-string.ProductName='iMonke'",
