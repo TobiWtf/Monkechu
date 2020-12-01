@@ -71,7 +71,7 @@ electron.app.on(
     "ready",
     async () => {
 
-        await storage.clear();
+        //await storage.clear();
 
         let client = new imonke.Client();
 
@@ -391,7 +391,7 @@ const menu = (opts={needsLogin:false, dev_tools:true}) => {
             [
                 {
                     label: "version",
-                    submenu: [{label: "1.2.34"}]
+                    submenu: [{label: "1.2.37"}]
                 },
                 {
                     label: "pp",

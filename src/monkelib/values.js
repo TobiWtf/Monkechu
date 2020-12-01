@@ -1,6 +1,6 @@
 config = {
     name: "iMonke",
-    version: "1.2.34",
+    version: "1.2.37",
     project: "monkechu"
 };
 
