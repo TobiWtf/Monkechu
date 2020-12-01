@@ -69,7 +69,25 @@ const run = async () => {
                     nsfw: false,
                     path: realFileButton.files[0].path,
                 }
-                ipcRenderer.send("client-post", config)
+                let post = ipcRenderer.sendSync(
+                    "client-post", 
+                    config
+                );
+
+                alert("Image sent to iMonke...")
+                    
+                if (post.error) {
+                    return alert(`Something went terribly wrong...\n\n"${post.reason}"`)
+                };
+
+                alert("Image posted!\n\n")
+
+                ipcRenderer.send(
+                    "create-window", 
+                    {
+                        window: "src/monkeupload/monkeupload.html"
+                    }
+                );
             } else {
                 return alert("No file chosen")
             }

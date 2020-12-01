@@ -1,6 +1,7 @@
 const electron = require("electron");
 
 const imonke = require("imonke");
+const { emitWarning } = require("process");
 
 let buildpath = require("path").join;
 
@@ -69,7 +70,7 @@ electron.app.on(
     "ready",
     async () => {
 
-        //await storage.clear();
+        await storage.clear();
 
         let client = new imonke.Client();
 
@@ -160,12 +161,23 @@ electron.ipcMain.on(
 electron.ipcMain.on(
     "client-post",
     async (event, config={}) => {
-        state.Client.upload_content_file(
-            config.tags,
-            config.featurable,
-            config.nsfw,
-            config.path
-        );
+        try {
+            await state.Client.upload_content_file(
+                config.tags,
+                config.featurable,
+                config.nsfw,
+                config.path
+            );
+            return {
+                error: false,
+            };
+        } catch (error) {
+            console.log(error)
+            return {
+                error: true,
+                reason: error
+            };
+        };
     },
 );
 
@@ -245,6 +257,8 @@ electron.ipcMain.on(
         CreateWindow(
             opts.window,
         );
+
+        return;
 
     },
 );
